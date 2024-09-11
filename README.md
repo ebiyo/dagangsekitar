@@ -7,28 +7,28 @@ Kelas : PBP F
 Jawaban Pertanyaan Tugas 2
 
 ### * Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
-> Membuat direktori dagangsekitar lokal
-> Membuat repository dagangsekitar pada GitHub
-> Menghubungkan direktori lokal dengan repository GitHub dengan command git remote add origin
-> Mengaktifkan virtual environment
-> Membuat requirements.txt pada direktori lokal dan melakukan pip install -r requirements.txt
-> Membuat proyek Django baru bernama dagangsekitar
-> Menambahkan "127.0.0.1" pada ALLOWED_HOSTS
-> Menjalankan server Django pada localhost untuk memastikan bahwa Django berhasil diinstal
-> Menambahkan file .gitignore
-> Membuat proyek baru pada website PWS dan menambahkan url deployment pada ALLOWED_HOSTS
-> Membuat aplikasi main baru pada direktori lokal dengan command py manage.py startapp main
-> Menambahkan 'main' pada INSTALLED_APPS
-> Membuat folder templates berisi main.html pada aplikasi main
-> Mengisi main.html dengan apa yang ingin ditampilkan (nama toko, npm, nama, kelas)
-> Mengisi models.py pada aplikasi main dengan class Product dengan atribut name, price, dan description
-> Melakukan migrasi model
-> Menambahkan fungsi show_main pada views.py pada aplikasi main
-> Membuat urls.py pada aplikasi main dan mengisinya dengan routing untuk memetakan fungsi pada views.py
-> Menambahkan path('', include('main.urls')) pada url_patterns pada proyek dagangsekitar (bukan di main)
-> Membuat tests.py pada aplikasi main dan mengisinya dengan test case
-> Melakukan add, commit, dan push ke repository GitHub
-> Melakukan push ke PWS
+* Membuat direktori dagangsekitar lokal
+* Membuat repository dagangsekitar pada GitHub
+* Menghubungkan direktori lokal dengan repository GitHub dengan command git remote add origin
+* Mengaktifkan virtual environment
+* Membuat requirements.txt pada direktori lokal dan melakukan pip install -r requirements.txt
+* Membuat proyek Django baru bernama dagangsekitar
+* Menambahkan "127.0.0.1" pada ALLOWED_HOSTS
+* Menjalankan server Django pada localhost untuk memastikan bahwa Django berhasil diinstal
+* Menambahkan file .gitignore
+* Membuat proyek baru pada website PWS dan menambahkan url deployment pada ALLOWED_HOSTS
+* Membuat aplikasi main baru pada direktori lokal dengan command py manage.py startapp main
+* Menambahkan 'main' pada INSTALLED_APPS
+* Membuat folder templates berisi main.html pada aplikasi main
+* Mengisi main.html dengan apa yang ingin ditampilkan (nama toko, npm, nama, kelas)
+* Mengisi models.py pada aplikasi main dengan class Product dengan atribut name, price, dan description
+* Melakukan migrasi model
+* Menambahkan fungsi show_main pada views.py pada aplikasi main
+* Membuat urls.py pada aplikasi main dan mengisinya dengan routing untuk memetakan fungsi pada views.py
+* Menambahkan path('', include('main.urls')) pada url_patterns pada proyek dagangsekitar (bukan di main)
+* Membuat tests.py pada aplikasi main dan mengisinya dengan test case
+* Melakukan add, commit, dan push ke repository GitHub
+* Melakukan push ke PWS
 
 ### * Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
 https://drive.google.com/file/d/1cXv8iSAX9yDLXXuejRB-dl_tzLU7R90H/view?usp=sharing
