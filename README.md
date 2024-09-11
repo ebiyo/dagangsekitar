@@ -31,7 +31,7 @@ Jawaban Pertanyaan Tugas 2
 * Melakukan push ke PWS
 
 ### * Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
-https://drive.google.com/file/d/1cXv8iSAX9yDLXXuejRB-dl_tzLU7R90H/view?usp=sharing
+[Link Bagan](https://drive.google.com/file/d/1cXv8iSAX9yDLXXuejRB-dl_tzLU7R90H/view?usp=sharing)
 
 ### * Jelaskan fungsi git dalam pengembangan perangkat lunak!
 Git berfungsi sebagai sistem pengontrol versi, yaitu untuk mencatat setiap perubahan file proyek yang dikerjakan oleh seorang atau banyak orang. Hal ini meningkatkan efisiensi dalam pembuatan program karena setiap perubahan dapat dilacak secara detail, memudahkan rollback ke versi sebelumnya jika terjadi kesalahan, serta memungkinkan kolaborasi antar pengembang dengan sinkronisasi yang baik. Git juga memungkinkan penggabungan (merge) dari berbagai cabang (branch) proyek sehingga tim bisa bekerja secara paralel tanpa mengganggu alur kerja satu sama lain.
