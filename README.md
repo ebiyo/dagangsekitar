@@ -32,7 +32,7 @@ csrf_token di Django mencegah serangan Cross-Site Request Forgery (CSRF), di man
 * Import fungsi show_xml pada views.py dan menambahkan path url ke url_patterns
 * Membuat fungsi show_json yang me-return HttpResponse
 * Import fungsi show_json pada views.py dan menambahkan path url ke url_patterns
-* Buat request baru pada postman dengan method GET dengan url http://localhost:8000/xml/ dan http://localhost:8000/json/ untuk mengetes apakah data terkirim
+* Buat request baru pada postman dengan method GET dengan url http://localhost:8000/xml/ dan http://localhost:8000/json/ untuk mengetes apakah data terkirim dengan baik
 * Membuat direktori .github pada proyek dengan subdirektori workflows
 * Membuat file deploy.yml pada direktori workflows
 * Buat secret pada repositori, dengan nama PWS_URL dan mengisinya dengan format https://(username.sso):(password proyek PWS)@pbp.cs.ui.ac.id/(username.sso)/(nama proyekmu)
