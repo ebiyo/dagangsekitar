@@ -4,6 +4,49 @@ NPM : 2306210115
 
 Kelas : PBP F
 
+---
+
+## Jawaban Pertanyaan Tugas 3
+
+### > Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+Data delivery penting dalam pengimplementasian platform karena memungkinkan komunikasi antar komponen, memastikan interaksi pengguna secara real-time, dan menjaga konsistensi data di seluruh sistem. Hal ini mendukung skalabilitas dan kinerja dengan menangani traffic yang besar secara efisien sambil mengurangi latensi. Tanpa data delivery yang efektif, platform akan sulit beroperasi dengan lancar dan memenuhi kebutuhan pengguna atau bisnis.
+
+### > Menurutmu, mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML?
+JSON lebih populer daripada XML karena lebih sederhana, strukturnya ringan, dan kemudahan penggunaannya. JSON memiliki sintaks yang sederhana dengan overhead yang lebih sedikit, membuatnya efisien untuk transmisi data, terutama di web. JSON didukung secara native oleh JavaScript, menjadikannya ideal untuk pengembangan web, dan JSON menangani tipe data seperti angka dan array lebih efektif dibandingkan XML yang memperlakukan semua data sebagai teks. Selain itu, JSON banyak digunakan dalam API karena ukurannya yang lebih kecil dan parsing yang lebih cepat, sementara XML lebih cocok untuk struktur data yang kompleks, namun umumnya lebih verbose dan sulit digunakan.
+
+### > Jelaskan fungsi dari method is_valid() pada form Django dan mengapa kita membutuhkan method tersebut?
+Metode is_valid() di Django sangat penting untuk memastikan bahwa data dari form atau serializer memenuhi aturan validasi, sehingga mencegah data yang tidak valid atau berbahaya diproses. Metode ini memeriksa data berdasarkan kriteria yang telah ditentukan, menangani kesalahan dengan memberikan feedback. Jika valid, data yang sudah bersih dapat diakses untuk digunakan dengan aman. 
+
+### > Mengapa kita membutuhkan csrf_token saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan csrf_token pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang?
+csrf_token di Django mencegah serangan Cross-Site Request Forgery (CSRF), di mana penyerang dapat menipu pengguna agar tanpa sadar mengirim permintaan yang tidak diizinkan ke sebuah situs web. Tanpa token ini, penyerang bisa mengeksploitasi sesi yang telah diautentikasi dan membuat perubahan atau tindakan yang tidak diizinkan atas nama pengguna. Token ini memastikan bahwa pengiriman form berasal dari sumber tepercaya dengan memverifikasikan keaslian permintaan sehingga mencegah tindakan berbahaya dari situs web eksternal.
+
+### > Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+* Mengubah primary key menjadi UUID untuk mencegah celah keamanan dan melakukan migrasi
+* Membuat forms.py berisi struktur form (fields untuk model)
+* Import class form dan model ke views.py dan buat fungsi create_product yang menerima parameter request
+* Import fungsi create_product pada views.py dan menambahkan path url ke url_patterns
+* Buat file create_product.html pada templates
+* Tambahkan kode untuk menampilkan data produk dalam bentuk tabel serta tombol "Add Product" yang akan redirect ke halaman form
+* Menjalankan server Django pada localhost untuk memastikan bahwa fitur berfungsi
+* Import HttpResponse dan serializers pada views.py dan buat fungsi show_xml yang me-return HttpResponse
+* Import fungsi show_xml pada views.py dan menambahkan path url ke url_patterns
+* Membuat fungsi show_json yang me-return HttpResponse
+* Import fungsi show_json pada views.py dan menambahkan path url ke url_patterns
+* Buat request baru pada postman dengan method GET dengan url http://localhost:8000/xml/ dan http://localhost:8000/json/ untuk mengetes apakah data terkirim
+* Membuat direktori .github pada proyek dengan subdirektori workflows
+* Membuat file deploy.yml pada direktori workflows
+* Buat secret pada repositori, dengan nama PWS_URL dan mengisinya dengan format https://(username.sso):(password proyek PWS)@pbp.cs.ui.ac.id/(username.sso)/(nama proyekmu)
+* Menambahkan CSRF_TRUSTED_ORIGINS pada settings.py di direktori proyek
+* Melakukan add, commit, dan push ke repository GitHub dan mengecek apakah proyek di PWS sudah ter-deploy secara otomatis
+
+### > Mengakses keempat URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
+![Screenshot 2024-09-17 221822](https://github.com/user-attachments/assets/c2f88511-87ba-4cd3-822a-c93408f27278)
+![Screenshot 2024-09-17 222002](https://github.com/user-attachments/assets/2256087d-befb-43af-a9dc-32f23617c064)
+![Screenshot 2024-09-17 221932](https://github.com/user-attachments/assets/3341fecb-4d9f-4a47-9bba-36e3e37ffd0f)
+![Screenshot 2024-09-17 222018](https://github.com/user-attachments/assets/3d55c02f-4c24-4d5f-b54f-63c730850822)
+
+---
+
 ## Jawaban Pertanyaan Tugas 2
 
 ### > Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
