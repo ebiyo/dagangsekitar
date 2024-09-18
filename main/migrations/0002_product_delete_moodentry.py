@@ -17,6 +17,8 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=48)),
                 ('price', models.IntegerField()),
                 ('description', models.CharField(max_length=255)),
+                ('seller', models.CharField(max_length=255)),
+                ('time', models.DateField(auto_now_add=True)),
             ],
         ),
         migrations.DeleteModel(
