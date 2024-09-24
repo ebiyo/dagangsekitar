@@ -7,6 +7,55 @@ Kelas : PBP F
 ---
 
 ## Jawaban Pertanyaan Tugas 3
+### > Apa perbedaan antara HttpResponseRedirect() dan redirect()
+Sebenarnya, redirect() mengandung HttpResponseRedirect(). Namun, HttpResponseRedirect() membutuhkan sebuah URL spesifik yang harus ditulis manual untuk me-redirect user ke URL tersebut, sedangkan redirect() lebih fleksibel karena dapat menerima argumen views atau instance model yang akan diambil URLnya oleh Django dengan sendirinya. Sama seperti HttpResponseRedirect(), redirect() juga dapat menerima argumen URL, sehingga redirect() lebih praktis untuk digunakan juga lebih pendek untuk diketik.
+
+### > Jelaskan cara kerja penghubungan model Product dengan User!
+Koneksi antara Product dengan User dibuat dengan ForeignKey, yang menciptakan hubungan one-to-many. Hubungan ini membuat setiap Product hanya akan terhubung dengan satu User, tetapi sebuah User dapat memiliki banyak Product. Field ForeignKey menyimpan referensi ke User, dan jika User dihapus, maka Product yang terasosiasi dengan User tersebut juga akan ikut terhapus.
+
+### > Apa perbedaan antara authentication dan authorization, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut.
+Authentication adalah proses untuk memastikan bahwa orang yang login di suatu akun adalah benar pemilik akun tersebut (biasanya dengan memasukkan username dan password, tapi dapat dengan metode autentikasi lainnya seperti biometrik).
+
+Authorization adalah proses untuk menentukan apa saja yang dapat dilakukan akun yang sudah diautentikasi. Misalnya, sebuah User tidak dapat mengakses atau mengubah data pengguna lain pada database, tapi sebuah Admin mungkin dapat melakukan hal tersebut.
+
+Untuk authentication, Django memiliki fungsi bawaan django.contrib.auth yang dapat kita gunakan untuk mengimpor authenticate, login, dan logout. Django menangani authorization dengan menggunakan decorators, permissions, atau groups, contohnya @login_required dan @permission_required.
+
+### > Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari cookies dan apakah semua cookies aman digunakan?
+Django mengingat pengguna yang sudah login dengan membuat sebuah session yang IDnya disimpan pada sebuah cookies di browser pengguna. Cookies ini akan di-cek oleh Django untuk mengidentifikasi User dan mengambil data pada session sebelumnya. Cookies juga digunakan untuk menyimpan preferensi pengguna, data analitik, atau fitur "remember me" yang membuat User tidak perlu login lagi. Tidak semua cookies aman untuk digunakan, cookies yang tidak memiliki flag seperti HttpOnly, Secure, atau SameSite cukup rentan terhadap serangan.
+
+### > Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+#### Membuat laman agar user dapat membuat akun (register)
+* Mengimport UserCreation dan menambahkan function register pada views.py
+* Membuat file register.html pada main/templates
+* Mengimport register serta menambahkan path ke urlpatterns pada urls.py
+#### Membuat fitur agar user dapat login
+* Mengimport authenticate, login, dan AuthenticationForm dan menambahkan function login_user pada views.py
+* Membuat file login.html pada main/templates
+* Mengimport login_user serta menambahkan path ke urlpatterns pada urls.py
+#### Membuat tombol agar user dapat logout
+* Mengimport logout dan menambahkan function logout_user pada views.py
+* Menambahkan button "Logout" pada main.html pada main/templates
+* Mengimport logout_user serta menambahkan path ke urlpatterns pada urls.py
+#### Membuat autentikasi
+* Mengimport login_required pada views.py dan menambahkan @login_required di atas fungsi show_main (agar laman utama hanya dapat diakses jika sudah login)
+#### Menggunakan cookies
+* Mengimport HttpResponseRedirect, reverse, dan datetime dan menambahkan 'last_login' pada login_user dan show_main
+* Mengubah function logout_user untuk menghapus cookie last_login saat pengguna logout
+* Menambahkan "Last login" pada main.html
+#### Menghubungkan User dengan Product
+* Mengimport User pada models.py
+* Menambahkan user = models.ForeignKey(User, on_delete=models.CASCADE) pada model Product
+* Mengubah create_product dan show_main pada views.py untuk mengambil data dari objek User dan mengisinya pada field user
+
+### > Bukti pembuatan dua akun dummy dengan tiga dummy data per akun
+![Screenshot 2024-09-25 002347](https://github.com/user-attachments/assets/8557316b-0cb1-4ec4-bdcf-e01e67ac1626)
+![Screenshot 2024-09-25 002419](https://github.com/user-attachments/assets/70415473-86b9-4fd1-8b48-70411bf5c273)
+![Screenshot 2024-09-25 002459](https://github.com/user-attachments/assets/aba6695e-e1d1-4434-b1ee-f8275ad2ea6c)
+
+---
+
+
+## Jawaban Pertanyaan Tugas 3
 
 ### > Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
 Data delivery penting dalam pengimplementasian platform karena memungkinkan komunikasi antar komponen, memastikan interaksi pengguna secara real-time, dan menjaga konsistensi data di seluruh sistem. Hal ini mendukung skalabilitas dan kinerja dengan menangani traffic yang besar secara efisien sambil mengurangi latensi. Tanpa data delivery yang efektif, platform akan sulit beroperasi dengan lancar dan memenuhi kebutuhan pengguna atau bisnis.
