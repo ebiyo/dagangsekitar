@@ -1,52 +1,46 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>DagangSekitar</title>
+{% endblock meta %}
 {% block content %}
-<h1>DagangSekitar</h1>
+{% include 'navbar.html' %}
+<div class="overflow-x-hidden px-4 md:px-8 pb-8 pt-16 min-h-screen bg-[#F2F2F2] flex flex-col"> <!-- Changed bg-gray-100 to bg-[#F2F2F2] -->
+  <div class="p-2 mb-4 relative">
+    <div class="h-full w-full py-6 absolute top-0 left-0 z-20 md:hidden flex">
+      <div class="h-full min-w-4 bg-[#99582a] mx-auto"></div> <!-- Changed bg-indigo-700 to bg-[#99582a] -->
+    </div>
+  </div>
 
-<h5>NPM: </h5>
-<p>{{ npm }}<p>
+  <!-- Wrapper to align both elements -->
+  <div class="flex justify-between items-center px-3 mb-2">
+    <!-- Last login -->
+    <div class="flex rounded-md items-center bg-[#99582a] py-2 px-4 w-fit"> <!-- Changed bg-indigo-600 to bg-[#99582a] -->
+      <h1 class="text-[#ffe6a7] text-center">Last Login: {{last_login}}</h1> <!-- Changed text-white to text-[#ffe6a7] -->
+    </div>
+    <!-- Add Product Button -->
+    <a href="{% url 'main:create_product' %}" class="bg-[#99582a] hover:bg-[#6f1d1b] text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"> <!-- Changed bg-indigo-600 to bg-[#99582a] and hover color -->
+      Add A Product
+    </a>
+  </div>
 
-<h5>Name:</h5>
-<p>{{ name }}</p>
+  {% if not product_entries %}
+  <div class="flex flex-col items-center justify-center min-h-[24rem] p-6">
+    <img src="{% static 'image/sedih-bingits.png' %}" alt="Sad face" class="w-32 h-32 mb-4" />
+    <p class="text-center text-[#432818] mt-4">Belum ada data produk pada DagangSekitar.</p> <!-- Changed text-gray-600 to text-[#432818] -->
+  </div>
+  {% else %}
+  <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 w-full">
+    {% for product in product_entries %}
+    {% include 'product_card.html' with product=product %}
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
 
-<h5>Class:</h5>
-<p>{{ class }}</p>
-
-{% if not product_entries %}
-<p>Belum ada data produk pada DagangSekitar.</p>
-{% else %}
-<table>
-  <tr>
-    <th>Nama Produk</th>
-    <th>Harga</th>
-    <th>Deskripsi</th>
-    <th>Penjual</th>
-    <th>Tanggal</th>
-  </tr>
-
-  {% comment %} Berikut cara memperlihatkan data mood di bawah baris ini 
-  {% endcomment %} 
-  {% for product in product_entries %}
-  <tr>
-    <td>{{product.name}}</td>
-    <td>{{product.price}}</td>
-    <td>{{product.description}}</td>
-    <td>{{product.seller}}</td>
-    <td>{{product.time}}</td>
-  </tr>
-  {% endfor %}
-</table>
-{% endif %}
-
-<br />
-
-<a href="{% url 'main:create_product' %}">
-  <button>Add Product</button>
-</a>
-
-<a href="{% url 'main:logout' %}">
-  <button>Logout</button>
-</a>
-
-<h5>Sesi terakhir login: {{ last_login }}</h5>
-
+<!-- Footer Section -->
+<footer class="fixed bottom-0 left-0 w-full py-2 bg-[#99582a] text-[#ffe6a7] text-center">
+  <p>Arief Ridzki Darmawan - 2306210115 - PBP F</p> <!-- Placeholder for Name, ID, and Class -->
+</footer>
 {% endblock content %}
