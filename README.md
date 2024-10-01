@@ -23,6 +23,7 @@ Kelas : PBP F
 ---
 <details>
 <summary>Jawaban Pertanyaan Tugas 4</summary>
+  
 ### > Apa perbedaan antara HttpResponseRedirect() dan redirect()
 Sebenarnya, redirect() mengandung HttpResponseRedirect(). Namun, HttpResponseRedirect() membutuhkan sebuah URL spesifik yang harus ditulis manual untuk me-redirect user ke URL tersebut, sedangkan redirect() lebih fleksibel karena dapat menerima argumen views atau instance model yang akan diambil URLnya oleh Django dengan sendirinya. Sama seperti HttpResponseRedirect(), redirect() juga dapat menerima argumen URL, sehingga redirect() lebih praktis untuk digunakan juga lebih pendek untuk diketik.
 
