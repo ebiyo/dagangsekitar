@@ -5,8 +5,24 @@ NPM : 2306210115
 Kelas : PBP F
 
 ---
+<details>
+<summary>Jawaban Pertanyaan Tugas 5</summary>
+  
+### > Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
 
-## Jawaban Pertanyaan Tugas 4
+### > Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
+
+### > Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+
+### > Jelaskan konsep flex box dan grid layout beserta kegunaannya!
+
+### > Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+
+</details>
+
+---
+<details>
+<summary>Jawaban Pertanyaan Tugas 4</summary>
 ### > Apa perbedaan antara HttpResponseRedirect() dan redirect()
 Sebenarnya, redirect() mengandung HttpResponseRedirect(). Namun, HttpResponseRedirect() membutuhkan sebuah URL spesifik yang harus ditulis manual untuk me-redirect user ke URL tersebut, sedangkan redirect() lebih fleksibel karena dapat menerima argumen views atau instance model yang akan diambil URLnya oleh Django dengan sendirinya. Sama seperti HttpResponseRedirect(), redirect() juga dapat menerima argumen URL, sehingga redirect() lebih praktis untuk digunakan juga lebih pendek untuk diketik.
 
@@ -51,10 +67,11 @@ Django mengingat pengguna yang sudah login dengan membuat sebuah session yang ID
 ![Screenshot 2024-09-25 002347](https://github.com/user-attachments/assets/8557316b-0cb1-4ec4-bdcf-e01e67ac1626)
 ![Screenshot 2024-09-25 002419](https://github.com/user-attachments/assets/70415473-86b9-4fd1-8b48-70411bf5c273)
 ![Screenshot 2024-09-25 002459](https://github.com/user-attachments/assets/aba6695e-e1d1-4434-b1ee-f8275ad2ea6c)
+</details>
 
 ---
-
-## Jawaban Pertanyaan Tugas 3
+<details>
+<summary>Jawaban Pertanyaan Tugas 3</summary>
 
 ### > Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
 Data delivery penting dalam pengimplementasian platform karena memungkinkan komunikasi antar komponen, memastikan interaksi pengguna secara real-time, dan menjaga konsistensi data di seluruh sistem. Hal ini mendukung skalabilitas dan kinerja dengan menangani traffic yang besar secara efisien sambil mengurangi latensi. Tanpa data delivery yang efektif, platform akan sulit beroperasi dengan lancar dan memenuhi kebutuhan pengguna atau bisnis.
@@ -92,10 +109,11 @@ csrf_token di Django mencegah serangan Cross-Site Request Forgery (CSRF), di man
 ![Screenshot 2024-09-17 222002](https://github.com/user-attachments/assets/2256087d-befb-43af-a9dc-32f23617c064)
 ![Screenshot 2024-09-17 221932](https://github.com/user-attachments/assets/3341fecb-4d9f-4a47-9bba-36e3e37ffd0f)
 ![Screenshot 2024-09-17 222018](https://github.com/user-attachments/assets/3d55c02f-4c24-4d5f-b54f-63c730850822)
+</details>
 
 ---
-
-## Jawaban Pertanyaan Tugas 2
+<details>
+<summary>Jawaban Pertanyaan Tugas 2</summary>
 
 ### > Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 * Membuat direktori dagangsekitar lokal
@@ -132,3 +150,4 @@ Django adalah framework yang ideal untuk memulai pengembangan perangkat lunak ka
 
 ### > Mengapa model pada Django disebut sebagai ORM?
 Dalam Django, model disebut ORM (Object-Relational Mapping) karena memetakan objek Python ke tabel database relasional, yang memungkinkan developer berinteraksi dengan database menggunakan kode Python tanpa harus menulis SQL secara langsung. Setiap class atribut model mewakili sebuah tabel kolom atau fields, sedangkan instance-nya mewakili sebuah baris. ORM menangani konversi antara kedua format ini, memudahkan operasi database seperti membuat, mengambil, memperbarui, atau menghapus data.
+</details>
