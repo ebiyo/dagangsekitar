@@ -5,20 +5,105 @@ NPM : 2306210115
 Kelas : PBP F
 
 ---
-<details>
-<summary>Jawaban Pertanyaan Tugas 5</summary>
+## Jawaban Pertanyaan Tugas 5
   
 ### > Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
+Penghitungan urutan prioritas (specificity) menggunakan sistem bobot berdasarkan jenis selector yang digunakan. Berikut jenis selector dan specificitynya:
+- Inline styles (gaya yang ditulis langsung dalam atribut style pada elemen):
+  Contoh: <div style="color: red;">
+  Specificity: 1000
+- ID selector (#id):
+  Contoh: #header { color: blue; }
+  Specificity: 100
+- Class selector, attribute selector, dan pseudo-class (.class, [attr=value], :hover, dll.):
+  Contoh: .nav { color: green; } atau [type="text"] { color: black; }
+  Specificity: 10
+- Element selector (seperti div, p, span) dan pseudo-element (seperti ::before, ::after):
+  Contoh: div { color: yellow; }
+  Specificity: 1
+
+Ada beberapa aturan yang berlaku, yaitu:
+- Selector yang lebih spesifik akan meng-override selector yang kurang spesifik
+- Jika specificity sama, maka CSS akan meng-override yang ada lebih dulu
+- !important akan meng-override aturan specificity normal, tapi tetap dapat di-override oleh !important yang memiliki specificity yang lebih tinggi
 
 ### > Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
+Responsive design sangat penting dalam pengembangan aplikasi web karena sebuah website dapat dikunjungi orang yang menggunakan berbagai perangkat, ukuran layar, dan orientasi. Responsive design menyesuaikan tata letak, gambar, dan fungsionalitas website agar memberikan pengalaman pengguna yang optimal di berbagai perangkat.
+
+Contoh aplikasi yang sudah menerapkan responsive design sangatlah banyak, mengingat responsive design merupakan hal yang penting dalam pengembangan aplikasi web. Hampir semua website mainstream yang kita kunjungi mendukung responsive design, contohnya Twitter, Instagram, Youtube, dan masih banyak lagi.
+
+Namun masih ada website yang belum menerapkan responsive design. Website-website ini biasanya website lama yang sudah tidak di-maintain atau di-update lagi, contohnya website pemerintah lama, website edukasi lama, website sosial media/e-commerce lama, dan blog personal.
 
 ### > Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+(Gambar diambil dari http://www.avajava.com/tutorials/lessons/how-are-margins-borders-padding-and-content-related.html)
+![how-are-margins-borders-padding-and-content-related-01](https://github.com/user-attachments/assets/6667d951-1821-4efa-9d45-76d87f0e11ed)
+
+Padding:
+- Ruang di dalam elemen antara konten dan border elemen.
+- Padding menambah ruang di sekitar konten di dalam elemen itu sendiri.
+- Contoh: Jika kita memiliki teks di dalam kotak, padding menambah ruang antara teks dan tepi kotak.
+- ```Implementasi: padding: 20px; /* Padding sama di semua sisi, kalau ingin sisi yang spesifik, tambahkan -(sisi) (contoh: padding-right: 20px;) */```
+
+Border:
+- Garis yang mengelilingi padding (dan konten) dari elemen.
+- Border menambahkan batas visual di sekitar elemen dan dapat memiliki berbagai gaya (solid, dashed, dll.), ketebalan, dan warna.
+- Border tidak memengaruhi ukuran margin atau padding, tetapi hanya muncul di antara keduanya.
+- ```Implementasi: border: 2px solid black; /* ketebalan, style border */```
+
+Margin:
+- Ruang di luar elemen yang memisahkan elemen dari elemen lain di sekitarnya.
+- Margin menambah jarak antara elemen dan elemen lain yang ada di sekitarnya. Margin adalah bagian terluar dari model kotak.
+- Margin bisa "bertabrakan", artinya jika dua elemen berdekatan memiliki margin, margin tersebut bisa saling tumpang tindih daripada menambahkan sesama lain.
+- ```Implementasi: margin: 10px 15px 20px 25px; /* top, right, bottom, left secara berurut */```
 
 ### > Jelaskan konsep flex box dan grid layout beserta kegunaannya!
+(Gambar diambil dari https://blog.nashtechglobal.com/css-grid-vs-flexbox/)
+![download-1-3](https://github.com/user-attachments/assets/ea38a203-e430-4ec1-bfd2-7084257dd16e)
+#### Flexbox adalah sistem tata letak satu dimensi yang berguna untuk meluruskan item dalam satu sumbu (baris atau kolom).
+Konsep Utama Flexbox:
+- Flex Container: Elemen induk yang menggunakan properti ```display: flex;``` dan elemen child di dalam kontainer ini menjadi flex items.
+- Flex Direction: Menentukan arah item (row, column, row-reverse, column-reverse).
+- Justify Content: Mengontrol perataan item horizontal(flex-start, flex-end, center, space-between, space-around, space-evenly).
+- Align Items: Mengontrol perataan item vertikal (stretch, flex-start, flex-end, center, baseline).
+- Flex Grow/Shrink: Menentukan bagaimana item membesar atau menyusut untuk mengisi ruang dalam kontainer.
+
+Penggunaan Flexbox:
+- Meluruskan elemen: Mudah untuk menyejajarkan elemen secara horizontal dan vertikal.
+- Bar navigasi: Merapikan dan mendistribusikan menu dalam baris untuk berbagai ukuran layar.
+- Layout sederhana: Layout satu dimensi seperti baris produk atau kolom kartu.
+  
+#### Grid Layout adalah sistem tata letak dua dimensi yang berguna untuk membuat tata letak kompleks yang terstruktur di kedua sumbu (baris dan kolom).
+Konsep Utama CSS Grid:
+- Grid Container: Elemen induk yang menggunakan properti ```display: grid;```.
+- Grid Tracks: Baris dan kolom yang membentuk tata letak grid.
+- Grid Template Columns/Rows: Menentukan ukuran dan jumlah kolom dan baris (grid-template-columns: 1fr 1fr 1fr; /* 3 kolom dengan ukuran sama */).
+- Grid Gap: Menambahkan ruang di antara baris dan kolom.
+- Grid Areas: Memungkinkan elemen tertentu untuk mencakup beberapa baris atau kolom, atau ditempatkan di area tertentu.
+- Auto Placement: CSS Grid secara otomatis menempatkan elemen anak ke dalam sel berikutnya yang tersedia, kecuali jika sudah ditempatkan secara spesifik.
+
+Penggunaan Grid Layout:
+- Layout halaman kompleks: Membuat layout halaman penuh dengan beberapa baris dan kolom, seperti dashboard atau tata letak majalah.
+- Responsive design: Membuat desain yang mengatur ulang konten tergantung pada ukuran layar.
+- Layout berbasis grid: Membuat layout dengan sistem grid tetap atau fleksibel di mana item dapat diposisikan dalam beberapa baris dan kolom.
+
+Flexbox dan grid layout dapat digabungkan untuk membuat tampilan sesuai dengan kemauan kita.
 
 ### > Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
-
-</details>
+* Menambahkan Tailwind pada aplikasi di templates/base.html
+* Menambahkan function edit_product pada views.py dan menambahkan edit_product.html pada main/templates
+* Mengimport edit_product pada urls.py di main dan tambahkan path ke urlpatterns
+* Menambahkan tombol edit pada main.html
+* Menambahkan fitur delete_product dengan langkah yang sama seperti edit_product
+* Menambahkan file navbar.html pada templates di root directory dan mengisinya dengan template yang sudah dikostumisasi
+* Memasukkan navbar ke dalam main.html, create_product.html, dan edit_product.html yang berada di subdirektori main/templates/ dengan menggunakan tags include
+* Mengkonfigurasikan static files pada aplikasi dengan menambahkan middleware WhiteNoise pada settings.py dan mengkonfigurasikan variabel STATIC_ROOT, STATICFILES_DIRS, dan STATIC_URL
+* Membuat file global.css di /static/css pada root directory
+* Mengisi global.css dengan custom styling
+* Mengubungkan global.css dan script Tailwind ke base.html
+* Mengubah login.html, register.html, create_product.html dan edit_product.html dengan custom styling
+* Membuat file product_card di main/templates dan mengisinya dengan custom styling
+* Menambahkan file sedih-bingits.png di /static/image pada root directory untuk ditampilkan jika tidak ada data produk yang tersedia
+* Memasukkan product_card.html dan sedih-bingits.png pada main.html untuk ditampilkan, serta mengisi main.html dengan custom styling
 
 ---
 <details>
