@@ -42,19 +42,19 @@ Padding:
 - Ruang di dalam elemen antara konten dan border elemen.
 - Padding menambah ruang di sekitar konten di dalam elemen itu sendiri.
 - Contoh: Jika kita memiliki teks di dalam kotak, padding menambah ruang antara teks dan tepi kotak.
-- ```Implementasi: padding: 20px; /* Padding sama di semua sisi, kalau ingin sisi yang spesifik, tambahkan -(sisi) (contoh: padding-right: 20px;) */```
+- Implementasi: ```padding: 20px; /* Padding sama di semua sisi, kalau ingin sisi yang spesifik, tambahkan -(sisi) (contoh: padding-right: 20px;) */```
 
 Border:
 - Garis yang mengelilingi padding (dan konten) dari elemen.
 - Border menambahkan batas visual di sekitar elemen dan dapat memiliki berbagai gaya (solid, dashed, dll.), ketebalan, dan warna.
 - Border tidak memengaruhi ukuran margin atau padding, tetapi hanya muncul di antara keduanya.
-- ```Implementasi: border: 2px solid black; /* ketebalan, style border */```
+- Implementasi: ```border: 2px solid black; /* ketebalan, style border */```
 
 Margin:
 - Ruang di luar elemen yang memisahkan elemen dari elemen lain di sekitarnya.
 - Margin menambah jarak antara elemen dan elemen lain yang ada di sekitarnya. Margin adalah bagian terluar dari model kotak.
 - Margin bisa "bertabrakan", artinya jika dua elemen berdekatan memiliki margin, margin tersebut bisa saling tumpang tindih daripada menambahkan sesama lain.
-- ```Implementasi: margin: 10px 15px 20px 25px; /* top, right, bottom, left secara berurut */```
+- Implementasi: ```margin: 10px 15px 20px 25px; /* top, right, bottom, left secara berurut */```
 
 ### > Jelaskan konsep flex box dan grid layout beserta kegunaannya!
 (Gambar diambil dari https://blog.nashtechglobal.com/css-grid-vs-flexbox/)
