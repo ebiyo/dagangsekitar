@@ -5,7 +5,48 @@ NPM : 2306210115
 Kelas : PBP F
 
 ---
-## Jawaban Pertanyaan Tugas 5
+## Jawaban Pertanyaan Tugas 6
+
+### > Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!
+#### Kecepatan
+JavaScript adalah interpreted language, sehingga mengurangi waktu compiling seperti pada Java. Selain itu, JavaScript adalah script sisi klien yang mempersingkat waktu yang diperlukan untuk terhubung ke server, sehingga mempercepat eksekusi program.
+
+#### Mengurangi Beban pada Server
+Seperti yang sudah disebutkan, JavaScript berjalan di sisi klien, bukan di server. Karena hal tersebut, server tidak harus menangani beban eksekusi JavaScript dan server dapat lebih fokus pada tugas lain seperti manajemen data.
+
+#### Kemudahan Penggunaan
+JavaScript adalah salah satu bahasa yang paling mudah dipelajari, terutama untuk pemrograman web. JavaScript dirancang agar mudah dipahami dan digunakan oleh web developer.
+
+#### Interface yang Melimpah
+JavaScript menawarkan berbagai interface bagi developer untuk membangun situs web mereka semenarik mungkin. Situs web dengan elemen drag and drop atau sliders dapat mempermudah pengalaman pengguna yang akan meningkatkan interaksi pengguna dengan situs web.
+
+#### Serbaguna
+Ada banyak cara berbeda untuk mengintegrasikan JavaScript ke dalam situs web kita. Node.js terintegrasi dengan baik dengan MongoDB dan MySQL, JavaScript tidak hanya dapat membangun dan menyelesaikan front-end situs web tetapi juga menangani back-end-nya.
+
+#### Interoperable
+JavaScript terintegrasi dengan lancar dengan bahasa pemrograman lainnya, sehingga banyak developer lebih memilih JavaScript untuk membuat berbagai aplikasi. Setiap halaman web atau script dari bahasa komputer lain dapat mengintegrasikannya.
+
+#### Popular
+JavaScript adalah salah satu bahasa paling populer untuk pengembangan web. Bahkan situs web paling populer di dunia, termasuk Amazon dan Google, menggunakan JavaScript karena dianggap sebagai teknologi yang sangat kuat. Karena popularitasnya yang terus meningkat, sekarang lebih mudah untuk mempelajarinya secara online melalui berbagai kursus.
+
+#### Event-Based
+JavaScript adalah bahasa pemrograman berbasis event. Artinya, berbagai segmen kode dijalankan setelah pengguna mengklik sebuah tombol. Akibatnya, saat situs web dimuat, tidak ada kode yang diinisialisasi, yang membuat waktu loading situs web tidak lama meskipun banyak fitur-fitur atau aset yang kita tambahkan.
+
+### > Jelaskan fungsi dari penggunaan await ketika kita menggunakan fetch()! Apa yang akan terjadi jika kita tidak menggunakan await?
+Dalam JavaScript, await digunakan dengan fetch() untuk menangani operasi asinkronus yang memungkinkan kode berhenti sejenak hingga data telah sepenuhnya diambil. Ini membuat kode lebih mudah dibaca dan ditulis, karena terlihat lebih seperti kode sinkron. Tanpa menggunakan await, kode akan terus dieksekusi segera setelah pemanggilan fetch() yang berpotensi menyebabkan upaya untuk mengakses data yang belum dimuat sehingga menghasilkan penanganan data yang tidak lengkap atau undefined. 
+
+### > Mengapa kita perlu menggunakan decorator csrf_exempt pada view yang akan digunakan untuk AJAX POST?
+Decorator csrf_exempt digunakan untuk melewati perlindungan Cross-Site Request Forgery (CSRF) untuk view tertentu. Perlindungan CSRF adalah fitur keamanan yang memastikan bahwa permintaan POST dilakukan oleh pengguna yang terautentikasi dari situs yang sama. Ketika menggunakan AJAX untuk mengirim permintaan POST, terutama dari klien eksternal atau saat token CSRF tidak disertakan, middleware CSRF Django akan memblokir permintaan tersebut. Menerapkan csrf_exempt pada sebuah view menonaktifkan perlindungan ini, sehingga permintaan POST AJAX dapat diproses tanpa token CSRF. Namun, kita harus menggunakan dekorator ini dengan hati-hati karena dapat mengekspos aplikasi pada serangan CSRF jika tidak ditangani dengan benar.
+
+### > Pada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?
+Meskipun validasi frontend penting untuk meningkatkan pengalaman pengguna dan mengurangi request server yang tidak perlu atau tidak diinginkan, pembersihan input di backend juga diperlukan. Pembersihan data input pengguna di backend dapat melindungi dari ancaman yang lolos dari pembersihan data frontend, memastikan bahwa data yang diterima integritasnya terjaga.
+
+### > Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+
+
+---
+<details>
+<summary>Jawaban Pertanyaan Tugas 5</summary>
   
 ### > Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
 Penghitungan urutan prioritas (specificity) menggunakan sistem bobot berdasarkan jenis selector yang digunakan. Berikut jenis selector dan specificitynya:
@@ -104,6 +145,7 @@ Flexbox dan grid layout dapat digabungkan untuk membuat tampilan sesuai dengan k
 * Membuat file product_card di main/templates dan mengisinya dengan custom styling
 * Menambahkan file sedih-bingits.png di /static/image pada root directory untuk ditampilkan jika tidak ada data produk yang tersedia
 * Memasukkan product_card.html dan sedih-bingits.png pada main.html untuk ditampilkan, serta mengisi main.html dengan custom styling
+</details>
 
 ---
 <details>
