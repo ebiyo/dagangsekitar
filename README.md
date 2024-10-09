@@ -8,28 +8,28 @@ Kelas : PBP F
 ## Jawaban Pertanyaan Tugas 6
 
 ### > Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!
-#### Kecepatan
+#### - Cepat
 JavaScript adalah interpreted language, sehingga mengurangi waktu compiling seperti pada Java. Selain itu, JavaScript adalah script sisi klien yang mempersingkat waktu yang diperlukan untuk terhubung ke server, sehingga mempercepat eksekusi program.
 
-#### Mengurangi Beban pada Server
+#### - Mengurangi Beban pada Server
 Seperti yang sudah disebutkan, JavaScript berjalan di sisi klien, bukan di server. Karena hal tersebut, server tidak harus menangani beban eksekusi JavaScript dan server dapat lebih fokus pada tugas lain seperti manajemen data.
 
-#### Kemudahan Penggunaan
+#### - Mudah Digunakan
 JavaScript adalah salah satu bahasa yang paling mudah dipelajari, terutama untuk pemrograman web. JavaScript dirancang agar mudah dipahami dan digunakan oleh web developer.
 
-#### Interface yang Melimpah
+#### - Interface yang Melimpah
 JavaScript menawarkan berbagai interface bagi developer untuk membangun situs web mereka semenarik mungkin. Situs web dengan elemen drag and drop atau sliders dapat mempermudah pengalaman pengguna yang akan meningkatkan interaksi pengguna dengan situs web.
 
-#### Serbaguna
+#### - Serbaguna
 Ada banyak cara berbeda untuk mengintegrasikan JavaScript ke dalam situs web kita. Node.js terintegrasi dengan baik dengan MongoDB dan MySQL, JavaScript tidak hanya dapat membangun dan menyelesaikan front-end situs web tetapi juga menangani back-end-nya.
 
-#### Interoperable
+#### - Interoperable
 JavaScript terintegrasi dengan lancar dengan bahasa pemrograman lainnya, sehingga banyak developer lebih memilih JavaScript untuk membuat berbagai aplikasi. Setiap halaman web atau script dari bahasa komputer lain dapat mengintegrasikannya.
 
-#### Popular
+#### - Popular
 JavaScript adalah salah satu bahasa paling populer untuk pengembangan web. Bahkan situs web paling populer di dunia, termasuk Amazon dan Google, menggunakan JavaScript karena dianggap sebagai teknologi yang sangat kuat. Karena popularitasnya yang terus meningkat, sekarang lebih mudah untuk mempelajarinya secara online melalui berbagai kursus.
 
-#### Event-Based
+#### - Event-Based
 JavaScript adalah bahasa pemrograman berbasis event. Artinya, berbagai segmen kode dijalankan setelah pengguna mengklik sebuah tombol. Akibatnya, saat situs web dimuat, tidak ada kode yang diinisialisasi, yang membuat waktu loading situs web tidak lama meskipun banyak fitur-fitur atau aset yang kita tambahkan.
 
 ### > Jelaskan fungsi dari penggunaan await ketika kita menggunakan fetch()! Apa yang akan terjadi jika kita tidak menggunakan await?
@@ -42,7 +42,23 @@ Decorator csrf_exempt digunakan untuk melewati perlindungan Cross-Site Request F
 Meskipun validasi frontend penting untuk meningkatkan pengalaman pengguna dan mengurangi request server yang tidak perlu atau tidak diinginkan, pembersihan input di backend juga diperlukan. Pembersihan data input pengguna di backend dapat melindungi dari ancaman yang lolos dari pembersihan data frontend, memastikan bahwa data yang diterima integritasnya terjaga.
 
 ### > Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
-
+> Memberikan error message pada login_user di views.py
+> Mengimport csrf_exempt dan require_POST di views.py
+> Menambahkan function add_product_ajax dengan @csrf_exempt dan @require_POST
+> Mengimport add_product_ajax ke urls.py dan menambahkan path di urlpatterns
+> Menghapus product_entries pada show_main dan menambahkan data = Product.objects.filter(user=request.user) pada show_xml dan show_json di views.py
+> Menghapus block if else product_entries di main.html dan menggantinya dengan div id="product_card"
+> Menambahkan script sebelum endblock content yang berisi function getProducts() di main.html
+> Membuat function refreshProducts() pada block script tadi untuk me-refresh data product secara asinkronus
+> Membuat modal header, body, dan footer di main.html
+> Menambahkan function showModal() dan hideModal() pada blok script tadi
+> Mengubah button Add a Product dan menambahkan tombol Add a Product by AJAX
+> Membuat function addProduct() dan event listener di block script tadi
+> Mengimport strip_tags pada views.py dan forms.py
+> Menggunakan strip_tags pada data name, description, dan seller di views.py
+> Menambahkan function clean_name, clean_description, dan clean_seller pada class ProductForm di forms.py
+> Menambahkan script DOMPurify di block meta pada main.html
+> Menggunakan DOMPurify.sanitize pada function refreshProducts() di main.html
 
 ---
 <details>
