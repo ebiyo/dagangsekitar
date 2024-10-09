@@ -42,23 +42,23 @@ Decorator csrf_exempt digunakan untuk melewati perlindungan Cross-Site Request F
 Meskipun validasi frontend penting untuk meningkatkan pengalaman pengguna dan mengurangi request server yang tidak perlu atau tidak diinginkan, pembersihan input di backend juga diperlukan. Pembersihan data input pengguna di backend dapat melindungi dari ancaman yang lolos dari pembersihan data frontend, memastikan bahwa data yang diterima integritasnya terjaga.
 
 ### > Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
-> Memberikan error message pada login_user di views.py
-> Mengimport csrf_exempt dan require_POST di views.py
-> Menambahkan function add_product_ajax dengan @csrf_exempt dan @require_POST
-> Mengimport add_product_ajax ke urls.py dan menambahkan path di urlpatterns
-> Menghapus product_entries pada show_main dan menambahkan data = Product.objects.filter(user=request.user) pada show_xml dan show_json di views.py
-> Menghapus block if else product_entries di main.html dan menggantinya dengan div id="product_card"
-> Menambahkan script sebelum endblock content yang berisi function getProducts() di main.html
-> Membuat function refreshProducts() pada block script tadi untuk me-refresh data product secara asinkronus
-> Membuat modal header, body, dan footer di main.html
-> Menambahkan function showModal() dan hideModal() pada blok script tadi
-> Mengubah button Add a Product dan menambahkan tombol Add a Product by AJAX
-> Membuat function addProduct() dan event listener di block script tadi
-> Mengimport strip_tags pada views.py dan forms.py
-> Menggunakan strip_tags pada data name, description, dan seller di views.py
-> Menambahkan function clean_name, clean_description, dan clean_seller pada class ProductForm di forms.py
-> Menambahkan script DOMPurify di block meta pada main.html
-> Menggunakan DOMPurify.sanitize pada function refreshProducts() di main.html
+* Memberikan error message pada login_user di views.py
+* Mengimport csrf_exempt dan require_POST di views.py
+* Menambahkan function add_product_ajax dengan @csrf_exempt dan @require_POST
+* Mengimport add_product_ajax ke urls.py dan menambahkan path di urlpatterns
+* Menghapus product_entries pada show_main dan menambahkan data = Product.objects.filter(user=request.user) pada show_xml dan show_json di views.py
+* Menghapus block if else product_entries di main.html dan menggantinya dengan div id="product_card"
+* Menambahkan script sebelum endblock content yang berisi function getProducts() di main.html
+* Membuat function refreshProducts() pada block script tadi untuk me-refresh data product secara asinkronus
+* Membuat modal header, body, dan footer di main.html
+* Menambahkan function showModal() dan hideModal() pada blok script tadi
+* Mengubah button Add a Product dan menambahkan tombol Add a Product by AJAX
+* Membuat function addProduct() dan event listener di block script tadi
+* Mengimport strip_tags pada views.py dan forms.py
+* Menggunakan strip_tags pada data name, description, dan seller di views.py
+* Menambahkan function clean_name, clean_description, dan clean_seller pada class ProductForm di forms.py
+* Menambahkan script DOMPurify di block meta pada main.html
+* Menggunakan DOMPurify.sanitize pada function refreshProducts() di main.html
 
 ---
 <details>
